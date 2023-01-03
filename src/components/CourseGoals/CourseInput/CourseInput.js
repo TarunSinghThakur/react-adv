@@ -15,13 +15,13 @@ const CourseInput = (props) => {
   };
 
   const formSubmitHandler = (event) => {
-    event.preventDefault();
+    event.preventDefault(); // Prevent page refresh
     if (enteredValue.trim().length === 0) {
       setIsValid(false);
-      // alert("Entered key strokes are not valid");
       return;
     }
     props.onAddGoal(enteredValue);
+    setEnteredValue("");
   };
 
   return (
